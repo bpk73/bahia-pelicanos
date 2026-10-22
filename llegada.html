@@ -454,11 +454,13 @@
 <!--  JAVASCRIPT                                 -->
 <!-- ═══════════════════════════════════════════ -->
 <script>
-    // ── Leer parámetros de la URL ──────────────────────────────
     const params   = new URLSearchParams(window.location.search);
     const plural   = params.get('p') === '1';
     const nombre   = params.get('n') || null;
     const codigo   = params.get('c') || null;
+    const corredora = params.get('ch') === 'c';
+    const wspNum   = corredora ? '56968740315' : '56996758970';
+    const wspNombre = corredora ? 'Natalia (NLFerrer Propiedades)' : 'Mauricio';
 
     // ── Código de acceso ──────────────────────────────────────
     if (codigo) {
@@ -478,6 +480,13 @@
         document.querySelector('.aviso-critico').innerHTML =
             '<strong>⚠️ Importante:</strong> Para activar la pantalla de la cerradura, coloquen <strong>varios dedos</strong> sobre el panel y esperen un momento. <strong>No usen el lector de huellas</strong> de la manilla — puede bloquear la cerradura por seguridad.';
     }
+
+    // ── Canal contacto ────────────────────────────────────────
+    document.getElementById('textoContacto').innerHTML = plural
+        ? `¿Tienen algún problema al llegar?<br>Escríbanme de inmediato, estoy disponible para ayudarles de forma remota.`
+        : `¿Tienes algún problema al llegar?<br>Escríbeme de inmediato, estoy disponible para ayudarte de forma remota.`;
+    document.querySelector('.btn-wsp').href = `https://wa.me/${wspNum}`;
+    document.querySelector('.btn-wsp span:last-child').textContent = `Escribir a ${wspNombre}`;
 
     // ── Toggle tarjetas ───────────────────────────────────────
     function toggleCard(id) {

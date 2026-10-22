@@ -414,6 +414,9 @@
     const plural   = params.get('p') === '1';
     const invierno = params.get('inv') === '1';
     const nombre   = params.get('n') || null;
+    const corredora = params.get('ch') === 'c';
+    const wspNum    = corredora ? '56968740315' : '56996758970';
+    const wspNombre = corredora ? 'Natalia (NLFerrer Propiedades)' : 'Mauricio';
 
     // ── Saludo ────────────────────────────────────────────────
     const badge = document.getElementById('saludoBadge');
@@ -428,6 +431,10 @@
         document.getElementById('textoContacto').innerHTML =
             '¿Tienen alguna duda durante su estadía?<br>Escríbanme, estoy disponible de forma remota.';
     }
+
+    // ── Canal contacto ────────────────────────────────────────
+    document.querySelector('.btn-wsp').href = `https://wa.me/${wspNum}`;
+    document.querySelector('.btn-wsp span:last-child').textContent = `Escribir a ${wspNombre}`;
 
     // ── Invierno ──────────────────────────────────────────────
     if (invierno) {
