@@ -486,7 +486,7 @@
         ? `¿Tienen algún problema al llegar?<br>Escríbanme de inmediato, estoy disponible para ayudarles de forma remota.`
         : `¿Tienes algún problema al llegar?<br>Escríbeme de inmediato, estoy disponible para ayudarte de forma remota.`;
     document.querySelector('.btn-wsp').href = `https://wa.me/${wspNum}`;
-    document.querySelector('.btn-wsp span:last-child').textContent = `Escribir a ${wspNombre}`;
+    document.querySelector('.btn-wsp').innerHTML = `<span>💬</span> Escribir a ${wspNombre}`;
 
     // ── Toggle tarjetas ───────────────────────────────────────
     function toggleCard(id) {

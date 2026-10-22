@@ -434,7 +434,7 @@
 
     // ── Canal contacto ────────────────────────────────────────
     document.querySelector('.btn-wsp').href = `https://wa.me/${wspNum}`;
-    document.querySelector('.btn-wsp span:last-child').textContent = `Escribir a ${wspNombre}`;
+    document.querySelector('.btn-wsp').innerHTML = `<span>💬</span> Escribir a ${wspNombre}`;
 
     // ── Invierno ──────────────────────────────────────────────
     if (invierno) {
