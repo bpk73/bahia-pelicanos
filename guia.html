@@ -433,10 +433,16 @@
     }
 
     // ── Canal contacto ────────────────────────────────────────
-    document.querySelector('.btn-wsp').href = `https://wa.me/${wspNum}`;
-    document.querySelector('.btn-wsp').innerHTML = `<span>💬</span> Escribir a ${wspNombre}`;
-    if (corredora) {
-        document.getElementById('footerContacto').textContent = 'NLFerrer Propiedades';
+    const tieneCanal = params.get('ch') !== null;
+    if (tieneCanal) {
+        document.querySelector('.btn-wsp').href = `https://wa.me/${wspNum}`;
+        document.querySelector('.btn-wsp').innerHTML = `<span>💬</span> Escribir a ${wspNombre}`;
+        if (corredora) {
+            document.getElementById('footerContacto').textContent = 'NLFerrer Propiedades';
+        }
+    } else {
+        document.querySelector('.contacto-card').style.display = 'none';
+        document.getElementById('footerContacto').style.display = 'none';
     }
 
     // ── Invierno ──────────────────────────────────────────────

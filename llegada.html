@@ -482,13 +482,19 @@
     }
 
     // ── Canal contacto ────────────────────────────────────────
-    document.getElementById('textoContacto').innerHTML = plural
-        ? `¿Tienen algún problema al llegar?<br>Escríbanme de inmediato, estoy disponible para ayudarles de forma remota.`
-        : `¿Tienes algún problema al llegar?<br>Escríbeme de inmediato, estoy disponible para ayudarte de forma remota.`;
-    document.querySelector('.btn-wsp').href = `https://wa.me/${wspNum}`;
-    document.querySelector('.btn-wsp').innerHTML = `<span>💬</span> Escribir a ${wspNombre}`;
-    if (corredora) {
-        document.getElementById('footerContacto').textContent = 'NLFerrer Propiedades';
+    const tieneCanal = params.get('ch') !== null;
+    if (tieneCanal) {
+        document.getElementById('textoContacto').innerHTML = plural
+            ? `¿Tienen algún problema al llegar?<br>Escríbanme de inmediato, estoy disponible para ayudarles de forma remota.`
+            : `¿Tienes algún problema al llegar?<br>Escríbeme de inmediato, estoy disponible para ayudarte de forma remota.`;
+        document.querySelector('.btn-wsp').href = `https://wa.me/${wspNum}`;
+        document.querySelector('.btn-wsp').innerHTML = `<span>💬</span> Escribir a ${wspNombre}`;
+        if (corredora) {
+            document.getElementById('footerContacto').textContent = 'NLFerrer Propiedades';
+        }
+    } else {
+        document.querySelector('.contacto-card').style.display = 'none';
+        document.getElementById('footerContacto').style.display = 'none';
     }
 
     // ── Toggle tarjetas ───────────────────────────────────────
