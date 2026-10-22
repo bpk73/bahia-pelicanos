@@ -401,7 +401,7 @@
 
     <div class="footer">
         Departamento K-73 · Bahía Pelícanos · Horcón<br>
-        Propietario: O. Mauricio Ganga León
+        <span id="footerContacto">Propietario: O. Mauricio Ganga León</span>
     </div>
 
 </div>
@@ -435,6 +435,9 @@
     // ── Canal contacto ────────────────────────────────────────
     document.querySelector('.btn-wsp').href = `https://wa.me/${wspNum}`;
     document.querySelector('.btn-wsp').innerHTML = `<span>💬</span> Escribir a ${wspNombre}`;
+    if (corredora) {
+        document.getElementById('footerContacto').textContent = 'NLFerrer Propiedades';
+    }
 
     // ── Invierno ──────────────────────────────────────────────
     if (invierno) {
