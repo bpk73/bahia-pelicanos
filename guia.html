@@ -194,6 +194,25 @@
         }
         .aviso-estufa strong { color: var(--naranja); }
 
+        /* ── CERRADURA STEPS ── */
+        :root { --rojo: #c62828; --rojo-claro: #ffebee; }
+        .c-step {
+            display: flex;
+            gap: 12px;
+            padding: 10px 12px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            line-height: 1.5;
+            align-items: flex-start;
+        }
+        .c-step.normal      { background: var(--azul-claro); }
+        .c-step.critico     { background: var(--rojo-claro); }
+        .c-step.advertencia { background: var(--naranja-claro); }
+        .c-step.seguro      { background: var(--verde-claro); border-left: 3px solid var(--verde); }
+        .c-step .c-icon     { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+        .c-step .c-sub      { display: block; font-size: 12px; color: var(--verde); margin-top: 4px; }
+
         /* ── ESTUFA oculta por defecto ── */
         .seccion-invierno { display: none; }
 
@@ -362,6 +381,38 @@
         </div>
     </div>
 
+    <!-- ── CERRADURA ── -->
+    <div class="card" id="card-cerradura">
+        <div class="card-header" onclick="toggleCard('card-cerradura')">
+            <div class="card-icon icon-rojo" style="background:var(--rojo-claro)">🔐</div>
+            <span class="card-title">Cerradura electrónica</span>
+            <span class="card-arrow">▼</span>
+        </div>
+        <div class="card-body">
+            <div style="margin-top:14px">
+                <div class="c-step normal">
+                    <span class="c-icon">🔑</span>
+                    <span>Ingresa el código y presiona <strong>✔</strong> para confirmar — sin ese paso la puerta <strong>NO abre</strong>.</span>
+                </div>
+                <div class="c-step critico">
+                    <span class="c-icon">🚪</span>
+                    <span><strong>Baja la manilla hacia abajo</strong> para abrir. No empujes la puerta — solo la manilla abre.</span>
+                </div>
+                <div class="c-step advertencia">
+                    <span class="c-icon">⚠️</span>
+                    <span><strong>No uses el lector de huellas</strong> de la manilla — bloquea la cerradura por seguridad y deberás esperar varios minutos.</span>
+                </div>
+                <div class="c-step seguro">
+                    <span class="c-icon">🔒</span>
+                    <div>
+                        <span><strong>Cada vez que salgas</strong>, sube la manilla <strong>una sola vez hacia arriba</strong> para activar el seguro.</span>
+                        <span class="c-sub">Esto protege el departamento ante cualquier intento de acceso no autorizado durante tu estadía.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- ── RECOMENDACIONES ── -->
     <div class="card" id="card-recom">
         <div class="card-header" onclick="toggleCard('card-recom')">
@@ -374,10 +425,6 @@
                 <li>
                     <span class="rec-icon">💡</span>
                     <span>Antes de salir verifica que las luces y la cocina queden apagadas.</span>
-                </li>
-                <li>
-                    <span class="rec-icon">🔒</span>
-                    <span>Al salir, levanta la manilla hacia arriba una sola vez para asegurar la puerta.</span>
                 </li>
                 <li>
                     <span class="rec-icon">📺</span>
