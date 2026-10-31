@@ -321,10 +321,10 @@
 
     <!-- ── AVISO CERRADURA ── -->
     <div class="aviso-critico">
-        <strong>⚠️ Importante:</strong> Para activar la pantalla de la cerradura,
-        coloca <strong>varios dedos</strong> sobre el panel y espera un momento.
-        <strong>No uses el lector de huellas</strong> de la manilla — puede bloquear
-        la cerradura por seguridad.
+        <strong>⚠️ Dos cosas críticas antes de llegar:</strong><br>
+        <span style="display:block;margin-top:6px">1. Después de ingresar la clave, <strong>presiona ✔</strong> — sin ese paso la puerta no abre.</span>
+        <span style="display:block;margin-top:4px">2. Para abrir, <strong>baja la manilla hacia abajo</strong> — no empujes la puerta.</span>
+        <span style="display:block;margin-top:4px">3. Al salir, <strong>sube la manilla hacia arriba</strong> para dejar el seguro activo.</span>
     </div>
 
     <!-- ── VIDEO DE ACCESO ── -->
@@ -421,15 +421,22 @@
                 </div>
                 <div class="c-step critico">
                     <span class="c-icon">✔️</span>
-                    <span>Presiona la tecla <strong>✔ (visto bueno)</strong> para confirmar. Sin este paso la puerta <strong>no abrirá</strong>.</span>
+                    <span>Presiona la tecla <strong>✔ (visto bueno)</strong> para confirmar. Sin este paso la puerta <strong>NO abrirá</strong>.</span>
+                </div>
+                <div class="c-step critico">
+                    <span class="c-icon">🚪</span>
+                    <span><strong>Baja la manilla hacia abajo</strong> para abrir. No empujes la puerta — solo la manilla abre.</span>
                 </div>
                 <div class="c-step advertencia">
                     <span class="c-icon">⚠️</span>
                     <span><strong>No uses el lector de huellas</strong> de la manilla. Si lo activas, la cerradura se bloquea por seguridad y deberás esperar varios minutos.</span>
                 </div>
-                <div class="c-step normal">
+                <div class="c-step normal" style="background:var(--verde-claro);border-left:3px solid var(--verde)">
                     <span class="c-icon">🔒</span>
-                    <span>Al <strong>salir</strong>, levanta la manilla <strong>una sola vez hacia arriba</strong> para activar el seguro.</span>
+                    <div>
+                        <span><strong>Al salir — siempre</strong>, levanta la manilla <strong>una sola vez hacia arriba</strong> para activar el seguro.</span>
+                        <span style="display:block;font-size:12px;color:var(--verde);margin-top:4px">Esto aplica cada vez que salgas — no solo al hacer check-out. Protege el departamento ante cualquier intento de acceso no autorizado.</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -478,7 +485,10 @@
         document.getElementById('textoContacto').innerHTML =
             '¿Tienen algún problema al llegar?<br>Escríbanme de inmediato, estoy disponible para ayudarles de forma remota.';
         document.querySelector('.aviso-critico').innerHTML =
-            '<strong>⚠️ Importante:</strong> Para activar la pantalla de la cerradura, coloquen <strong>varios dedos</strong> sobre el panel y esperen un momento. <strong>No usen el lector de huellas</strong> de la manilla — puede bloquear la cerradura por seguridad.';
+            '<strong>⚠️ Dos cosas críticas antes de llegar:</strong><br>' +
+            '<span style="display:block;margin-top:6px">1. Después de ingresar la clave, <strong>presionen ✔</strong> — sin ese paso la puerta no abre.</span>' +
+            '<span style="display:block;margin-top:4px">2. Para abrir, <strong>bajen la manilla hacia abajo</strong> — no empujen la puerta.</span>' +
+            '<span style="display:block;margin-top:4px">3. Al salir, <strong>suban la manilla hacia arriba</strong> para dejar el seguro activo.</span>';
     }
 
     // ── Canal contacto ────────────────────────────────────────
